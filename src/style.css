@@ -1,0 +1,71 @@
+@import '@xterm/xterm/css/xterm.css';
+
+:root {
+  --app-width: 100vw;
+  --app-height: 100dvh;
+  --app-left: 0px;
+  --app-top: 0px;
+  background: #000;
+  color-scheme: dark;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #000;
+  overscroll-behavior: none;
+}
+
+body {
+  position: fixed;
+  inset: 0;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+#terminal {
+  position: fixed;
+  left: var(--app-left);
+  top: var(--app-top);
+  width: var(--app-width);
+  height: var(--app-height);
+  box-sizing: border-box;
+  margin: 0;
+  padding:
+    env(safe-area-inset-top, 0px)
+    env(safe-area-inset-right, 0px)
+    env(safe-area-inset-bottom, 0px)
+    env(safe-area-inset-left, 0px);
+  overflow: hidden;
+  background: #000;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#terminal .xterm {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+#terminal .xterm-viewport {
+  overflow-y: scroll !important;
+  scrollbar-width: none;
+  overscroll-behavior: none;
+}
+
+#terminal .xterm-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+#terminal .xterm-helper-textarea {
+  font-size: 16px !important;
+}
+
+@supports not (height: 100dvh) {
+  :root { --app-height: 100vh; }
+}
