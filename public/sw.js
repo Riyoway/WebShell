@@ -1,8 +1,11 @@
-const CACHE = 'webshell-v0.0.1-r1';
+const CACHE = 'webshell-v0.0.1-r2';
 const APP_SHELL = [
   '/',
   '/index.html',
   '/manifest.webmanifest',
+  '/favicon.ico',
+  '/favicon.png',
+  '/og-image.png',
   '/pwa-192.png',
   '/pwa-512.png',
   '/apple-touch-icon.png'
